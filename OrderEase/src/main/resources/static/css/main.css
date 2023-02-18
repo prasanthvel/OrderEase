@@ -1,0 +1,489 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #fff;
+	color: #777;
+	font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 10px;
+	width: 940px;
+}
+
+header {
+	background-color: #f0f0f0;
+	height: 120px;
+}
+
+footer {
+	position: absolute;
+	bottom: 50px;
+}
+
+header h1 {
+	float: left;
+	margin-top: 32px;
+}
+
+header h1 .color {
+	color: #02b8dd;
+}
+
+header nav {
+	float: right;
+}
+
+header nav ul li {
+	float: left;
+	margin-right: 40px;
+	display: inline-block;
+	margin-top: 50px;
+}
+
+header nav ul li a.pointer {
+	cursor: pointer;
+}
+
+header nav ul li a {
+	color: #444;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: block;
+	margin-right: 20px;
+}
+
+bill-total {
+	position: absolute;
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+.autocomplete {
+	/*the container must be positioned relative:*/
+	position: relative;
+	display: inline-block;
+	font-size: 0.9em;
+	font-family: sans-serif;
+}
+
+.addproduct {
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+.customer-detail {
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+.ui-menu .ui-menu-item {
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+input {
+	border: 1px solid transparent;
+	background-color: #f1f1f1;
+	padding: 10px;
+	font-size: 0.9em;
+	font-family: sans-serif;
+}
+
+input[type=text] {
+	padding: 10px;
+	background-color: #f1f1f1;
+	width: 100%;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+input[type=number] {
+	padding: 10px;
+	background-color: #f1f1f1;
+	width: 100%;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+input[type=submit] {
+	background-color: #009879c9;
+	color: #fff;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+input[type=submit]:hover {
+	background-image: none !important;
+	background-color: #009879 !important;
+}
+
+.autocomplete-items {
+	position: absolute;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+
+.autocomplete-items div {
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+	/*when hovering an item:*/
+	background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	background-color: #009879c9 !important;
+	color: #ffffff;
+}
+
+thead {
+	position: sticker;
+}
+
+.styled-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 80px 10px !important;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	table-layout: auto !important;
+}
+
+.styled-table thead tr {
+	background-color: #009879c9;
+	color: #ffffff;
+	text-align: left;
+}
+
+.styled-table th, .styled-table td {
+	padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+	font-weight: bold;
+	color: #009879;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.show-btn {
+	background: #fff;
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: 500;
+	color: #3498db;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.show-btn, .containera {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.containera {
+	display: block;
+	background: #fff;
+	width: 410px;
+	padding: 30px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#show:checked ~ .overlay, .containera {
+	display: block;
+}
+
+.containera .close-btn {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.containera .close-btn:hover {
+	color: #3498db;
+}
+
+.containera .text {
+	font-size: 35px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.containera form {
+	margin-top: -20px;
+}
+
+.containera form .data {
+	height: 45px;
+	width: 100%;
+	margin: 40px 0;
+}
+
+form .data label {
+	font-size: 18px;
+}
+
+form .data input {
+	height: 100%;
+	width: 100%;
+	padding-left: 10px;
+	font-size: 17px;
+	border: 1px solid silver;
+}
+
+form .data input:focus {
+	border-color: #3498db;
+	border-bottom-width: 2px;
+}
+
+form .forgot-pass {
+	margin-top: -8px;
+}
+
+form .forgot-pass a {
+	color: #3498db;
+	text-decoration: none;
+}
+
+form .forgot-pass a:hover {
+	text-decoration: underline;
+}
+
+form .btn {
+	margin: 30px 0;
+	height: 45px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+form .btn .inner {
+	height: 100%;
+	width: 300%;
+	position: absolute;
+	left: -100%;
+	z-index: -1;
+	background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+	transition: all 0.4s;
+}
+
+form .btn:hover .inner {
+	left: 0;
+}
+
+form .btn button {
+	height: 100%;
+	width: 100%;
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.overlay {
+	position: fixed; /* Sit on top of the page content */
+	display: none; /* Hidden by default */
+	width: 100%; /* Full width (cover the whole page) */
+	height: 100%; /* Full height (cover the whole page) */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Black background with opacity */
+	z-index: 2;
+	/* Specify a stack order in case you're using a different order for other elements */
+	cursor: pointer; /* Add a pointer on hover */
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	background: none;
+	border: 1px solid #bdbdbd;
+	height: 48px;
+	padding: 0 24px 0 16px;
+	letter-spacing: 0.25px;
+	border-radius: 24px;
+	cursor: pointer;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn .mdi {
+	margin-right: 8px;
+}
+
+.btn-delete {
+	font-size: 16px;
+	color: red;
+}
+
+.btn-delete>.mdi-delete-empty {
+	display: none;
+}
+
+.btn-delete:hover {
+	background-color: #fff5f5;
+}
+
+.btn-delete:hover>.mdi-delete-empty {
+	display: block;
+}
+
+.btn-delete:hover>.mdi-delete {
+	display: none;
+}
+
+.btn-delete:focus {
+	box-shadow: 0 0 0 4px #fcc;
+}
+
+.order-detail {
+	display: flex;
+	padding: 10px;
+	font-size: 1.2em;
+	font-family: sans-serif;
+}
+
+.sub-detail {
+	flex: 1; /* additionally, equal width */
+	padding: 1em;
+}
+
+.action-btn {
+	background-color: #009879c9;
+	color: #fff;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	margin: 10px;
+}
+
+.action-btn:hover {
+	background-image: none !important;
+	background-color: #009879 !important;
+}
+
+.action-btn-delete {
+	background-color: #d11a2ac9;
+	color: #fff;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	margin: 10px;
+}
+
+.action-btn-delete:hover {
+	background-image: none !important;
+	background-color: #D11A2A !important;
+}
+
+.content-main {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-right: 50px;
+	margin-left: 25px;
+}
+
+/* info message  */
+#info-message {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	max-width: 400px;
+	padding: 16px;
+	background-color: #009879c9;
+	color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+	z-index: 1;
+	display: none;
+}
+
+/* Styling for the close button */
+ .info-close-btn {
+	position: absolute;
+	top: 5px;
+	margin:5px;
+	right: 5px;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #FFFFFF;	
+}
+
+.close-btn:hover {
+	color: #009879
+}
+
+#info-message:hover {
+	background-color: #009879;
+}
+
+/* Styling for the message text */
+#info-message p{
+	margin: 5px 25px 5px 5px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+.close-btn i {
+	font-size: 18px;
+}
