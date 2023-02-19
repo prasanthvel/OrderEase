@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.avega.task.dto.ApiDTO;
+import com.avega.task.dto.ApiStatus;
 import com.avega.task.dto.ProductResponse;
 import com.avega.task.models.Product;
 import com.avega.task.repositories.ProductRepository;
@@ -21,7 +21,7 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	public ProductResponse addProduct(Product product) {
-		Optional<Product> existingProduct = productRepository.findById(product.getId());
+		Optional<Product> existingProduct = productRepository.findById(product.id);
 		ProductResponse response = new ProductResponse();
 
 		if (existingProduct.isPresent()) {
@@ -45,8 +45,8 @@ public class ProductServiceImpl implements IProductService {
 
 	@Override
 	@Transactional
-	public ApiDTO deleteById(int productId) {
-		ApiDTO response = new ApiDTO();
+	public ApiStatus deleteById(int productId) {
+		ApiStatus response = new ApiStatus();
 		if (productRepository.existsById((long) productId)) {
 			productRepository.deleteById((long) productId);
 			response.status = 200;
@@ -61,20 +61,31 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public Product getProductById(int productId) {
 		Optional<Product> tempProduct = productRepository.findById((long) productId);
+
 		Product product = new Product();
-		if (tempProduct.isPresent()) {
-			return tempProduct.get();
-		} else {
-			return product;
-		}
+
+		if (tempProduct.isPresent())
+			product = tempProduct.get();
+
+		return product;
 	}
 
 	@Override
 	public Product updateProduct(long productId, Product product) {
+		Optional<Product> isProductExist = productRepository.findById((long) productId);
+
 		Product updatedProduct = new Product();
-		if (productRepository.findById(productId).isPresent()) {
-			updatedProduct = productRepository.saveAndFlush(product);
+		if (isProductExist.isPresent()) {
+			Product temp = isProductExist.get();
+			temp.productName = product.productName;
+			temp.productUnit = product.productUnit;
+			temp.mrp = product.mrp;
+			temp.price = product.price;
+			temp.tax = product.tax;			
+
+			updatedProduct = productRepository.saveAndFlush(temp);
 		}
+
 		return updatedProduct;
 	}
 }

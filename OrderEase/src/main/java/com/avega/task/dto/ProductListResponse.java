@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.avega.task.models.Product;
 
 @Component
-public class ProductListResponse extends ApiDTO{
+public class ProductListResponse extends ApiStatus{
 
 	public List<Product> productList;
 }

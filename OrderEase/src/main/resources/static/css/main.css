@@ -32,7 +32,7 @@ header h1 .color {
 }
 
 header nav {
-	float: right;
+	float: right;	
 }
 
 header nav ul li {
@@ -52,6 +52,11 @@ header nav ul li a {
 	font-weight: bold;
 	display: block;
 	margin-right: 20px;
+}
+
+a:hover{
+	color: #444 !important;
+	font-size: 1.2em;
 }
 
 bill-total {
@@ -282,21 +287,8 @@ form .data input:focus {
 	border-bottom-width: 2px;
 }
 
-form .forgot-pass {
-	margin-top: -8px;
-}
-
-form .forgot-pass a {
-	color: #3498db;
-	text-decoration: none;
-}
-
-form .forgot-pass a:hover {
-	text-decoration: underline;
-}
-
 form .btn {
-	margin: 30px 0;
+	margin: 60px 0px 0px 0px;
 	height: 45px;
 	width: 100%;
 	position: relative;
@@ -309,7 +301,7 @@ form .btn .inner {
 	position: absolute;
 	left: -100%;
 	z-index: -1;
-	background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+	background: -webkit-linear-gradient(right, #009879c9, #009879, #009879c9, #009879);
 	transition: all 0.4s;
 }
 
@@ -486,4 +478,12 @@ form .btn button {
 
 .close-btn i {
 	font-size: 18px;
+}
+
+
+.cust-dropdown {
+    top: 734px;
+    left: 35px;
+    display: block;
+    width: 322.953px;
 }

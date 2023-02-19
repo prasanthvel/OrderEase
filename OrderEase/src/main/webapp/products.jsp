@@ -12,7 +12,8 @@
 
 		<h4>Add Products</h4>
 
-		<form id="productForm" action="javascript:validateProductDetails()" autocomplete="off">
+		<form id="productForm" action="javascript:validateProductDetails()"
+			autocomplete="off">
 			<div class="autocomplete" style="width: 300px;">
 				<input id="productName" type="text" name="productname"
 					placeholder="Product Name" required>
@@ -153,8 +154,8 @@
 				showInfoMessage("Enter valid tax percentage!");
 				return false;
 			}
-			
-			if(pPrice>pMrp){
+
+			if (pPrice > pMrp) {
 				document.getElementById("price").focus();
 				document.getElementById("price").select();
 				showInfoMessage("Price should not higher then MRP!");
@@ -225,9 +226,9 @@
 				contentType : "application/json",
 				success : function(deleteProductResponse) {
 					console.log(deleteProductResponse);
-					
+
 					showInfoMessage(deleteProductResponse.message);
-					
+
 					if (deleteProductResponse.status == 200) {
 						var table = $('#product-table').DataTable();
 						table.row($(currentRow).parents('tr')).remove().draw();

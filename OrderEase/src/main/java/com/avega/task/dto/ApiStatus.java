@@ -1,6 +1,6 @@
 package com.avega.task.dto;
 
-public class ApiDTO {
+public class ApiStatus {
 
 	public int status;	
 	public String message;

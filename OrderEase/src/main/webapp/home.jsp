@@ -64,11 +64,11 @@
 				action="javascript:insertDataToTable()">
 				<div class="autocomplete" style="width: 300px;">
 					<input id="productInput" type="text" name="productname"
-						placeholder="Product Name">
+						placeholder="Product Name" required>
 				</div>
 				<div class="autocomplete" style="width: 200px;">
 					<input id="qty" type="number" name="quantity" placeholder="Qty"
-						style="width: 100px;"> <input type="submit" value="Add">
+						style="width: 100px;" required> <input type="submit" value="Add">
 				</div>
 			</form>
 		</div>
@@ -101,7 +101,7 @@
 					action="javascript:onPlaceOrderClicked()">
 					<div class="autocomplete" style="width: 300px;">
 						<input id="customer-mobile" type="text" name="customer-mob"
-							placeholder="Mobile Number or Email Id">
+							placeholder="Mobile Number or Email Id" required>
 					</div>
 					<div class="autocomplete" style="width: 200px;">
 						<input type="submit" value="Place Order">

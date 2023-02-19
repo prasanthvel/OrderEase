@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	private OrderDetailsRepository orderDetailsRepository;
 
 	@Override
-	public PlaceOrderResponse placeOrder(Customer customer) {		
+	public PlaceOrderResponse placeOrder(Customer customer) {
 		PlaceOrderResponse placeOrderResponse = new PlaceOrderResponse();
 
 		Optional<Customer> existingCustomer = customerRepository.findByEmailIdOrMobileNumber(customer.getEmailId(),
@@ -123,6 +123,8 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	public Order createNewOrder(Customer customer) {
 
+		// calculate order total amount and products sub total and save in orders object
+
 		if (null != customer.orders && customer.orders.size() > 0) {
 
 			customer.orders.get(0).customerId = customer.id;
@@ -164,7 +166,17 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	@Override
 	public Optional<Customer> getCustomerDetail(int customerId) {
+
 		Optional<Customer> customer = customerRepository.findById((long) customerId);
+		if (customer.isPresent() && customer.get().id == customerId) {
+			Optional<List<Order>> ordersList = orderRepository.findByCustomerId(customerId);
+			if (ordersList.isPresent()) {
+				ordersList.get().forEach(order -> {
+					order.orderDetails = orderDetailsRepository.findByOrderId(order.id).get();
+				});
+				customer.get().orders = ordersList.get();
+			}
+		}
 		return customer;
 	}
 

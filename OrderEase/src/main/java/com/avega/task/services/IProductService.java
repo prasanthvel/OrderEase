@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.avega.task.dto.ApiDTO;
+import com.avega.task.dto.ApiStatus;
 import com.avega.task.dto.ProductResponse;
 import com.avega.task.models.Product;
 
@@ -15,7 +15,7 @@ public interface IProductService {
 	
 	List<Product> getProducts();
 
-	ApiDTO deleteById(int productId);
+	ApiStatus deleteById(int productId);
 
 	Product getProductById(int productId);
 
